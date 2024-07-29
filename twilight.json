@@ -960,7 +960,66 @@
             "title": "بانر لعرض التصنيفات ضمن المتجر",
             "icon": "sicon-center",
             "path": "home.custome_banner",
-            "fields": []
+            "fields": [
+                {
+                    "id": "section_title",
+                    "type": "string",
+                    "format": "text",
+                    "label": "عنوان الفقرة كاملة",
+                    "description": null,
+                    "labelHTML": null,
+                    "placeholder": "Placeholder text ..",
+                    "icon": "sicon-format-text-alt",
+                    "value": "منتجاتنا",
+                    "multilanguage": false,
+                    "required": true,
+                    "minLength": "1",
+                    "maxLength": 30
+                },
+                {
+                    "id": "banner_title",
+                    "type": "string",
+                    "format": "text",
+                    "label": "العنوان ضمن البانر",
+                    "description": null,
+                    "labelHTML": null,
+                    "placeholder": "Placeholder text ..",
+                    "icon": "sicon-format-text-alt",
+                    "value": "الذهب",
+                    "multilanguage": false,
+                    "required": true,
+                    "minLength": 6,
+                    "maxLength": 30
+                },
+                {
+                    "id": "banner_background",
+                    "type": "string",
+                    "format": "image",
+                    "label": "خلفية البانر",
+                    "description": null,
+                    "labelHTML": null,
+                    "placeholder": "e.g. https://hostname.com/image.png",
+                    "icon": "sicon-image",
+                    "value": null,
+                    "required": true
+                },
+                {
+                    "id": "banner_cat_selection",
+                    "type": "items",
+                    "format": "dropdown-list",
+                    "label": "اختار الفئات التي تريد عرضها",
+                    "description": null,
+                    "labelHTML": null,
+                    "icon": "sicon-keyboard_arrow_down",
+                    "selected": [],
+                    "options": [],
+                    "source": "Categories",
+                    "multichoice": true,
+                    "searchable": true,
+                    "required": true,
+                    "value": []
+                }
+            ]
         }
     ],
     "support_url": "https://salla.com/",
