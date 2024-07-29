@@ -954,6 +954,13 @@
                     "maxLength": "45"
                 }
             ]
+        },
+        {
+            "key": "b73bc2b3-cbbb-4eea-83a1-accc6433316a",
+            "title": "بانر لعرض التصنيفات ضمن المتجر",
+            "icon": "sicon-center",
+            "path": "home.custome_banner",
+            "fields": []
         }
     ],
     "support_url": "https://salla.com/",
