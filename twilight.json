@@ -1020,6 +1020,13 @@
                     "value": []
                 }
             ]
+        },
+        {
+            "key": "0443579f-5acf-48c7-b4e6-57741da70747",
+            "title": "تصفح حسب التصنيف",
+            "icon": "sicon-caret-down-circle",
+            "path": "home.brows_by_cat",
+            "fields": []
         }
     ],
     "support_url": "https://salla.com/",
