@@ -1,11 +1,15 @@
-<div class="flex mr-10 flex-col md:flex-row justify-center items-center my-5">
+<div class="flex flex-col md:flex-row justify-center items-center my-5">
 	<div
-		class="flex flex-col p-3 w-full max-w-6xl">
+		class="flex flex-col md:flex-row p-3 w-full max-w-6xl">
 		<!-- النصوص -->
 		<div class="flex-1 text-right p-4 mb-6 md:mb-0 flex flex-col justify-between">
 			<div>
-				<h1 class="text-4xl font-slim md:text-5xl mb-4 hover:text-[#a5804a] transition-all duration-300 ">{{ component.about_us_title }}</h1>
-				<p class="mb-6 font-slim pt-5 text-justify text-lg md:text-lg">{{ component.about_us_paragraph }}</p>
+				<h1 class="text-4xl font-slim md:text-5xl mb-4 hover:text-[#a5804a] transition-all duration-300">
+					{{ component.about_us_title }}
+				</h1>
+				<p class="mb-6 font-slim pt-5 text-justify text-lg md:text-lg">
+					{{ component.about_us_paragraph }}
+				</p>
 			</div>
 			<div class="flex justify-center mt-5">
 				<a href="{{ component.about_us_url_destination }}" class="btn-custom text-lg md:text-lg">
@@ -15,7 +19,7 @@
 		</div>
 		<!-- الفيديو -->
 		<div class="flex-1 p-4 flex justify-center items-center">
-			<div class="relative w-full h-full">
+			<div class="relative w-full h-64 md:h-full">
 				<video class="absolute inset-0 w-full h-full object-cover" autoplay loop muted playsinline>
 					<source src={{component.about_us_video_url}} type="video/mp4">
 					متصفحك لا يدعم عنصر الفيديو.

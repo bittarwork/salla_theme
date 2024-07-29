@@ -581,6 +581,7 @@ select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/
 .h-full{height:100%}
 .h-lg-banner{height:428px}
 .h-px{height:1px}
+.h-64{height:16rem}
 .max-h-0{max-height:0px}
 .max-h-8{max-height:2rem}
 .max-h-\[300px\]{max-height:300px}
@@ -6168,6 +6169,7 @@ salla-slider .swiper-pagination-bullets.swiper-pagination-horizontal {
 .md\:h-20{height:5rem}
 .md\:h-24{height:6rem}
 .md\:h-\[400px\]{height:400px}
+.md\:h-full{height:100%}
 .md\:\!w-2\/4{width:50% !important}
 .md\:w-2\/4{width:50%}
 .md\:w-24{width:6rem}
