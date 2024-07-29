@@ -1,7 +1,22 @@
 // custome body and utils classes : 
 body { 
     font-family: 'etab';
+    background-color: #f0f0f0  ;
 }
+// btn classes : 
+.btn-custom {
+    background-color:#f0f0f0 ;
+    border: 1px solid #a5804a ; 
+    color: #a5804a;
+    padding: 0vh 1.2vw;
+    border-radius: 0;
+    
+  }
+  
+  .btn-custom:hover {
+    background-color: #a5804a    ;
+    color:  #ffffff;
+  }
 // slider for hero section :
 salla-slider {
     .swiper-pagination-bullet {
