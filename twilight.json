@@ -960,7 +960,77 @@
             "title": "عرض للمنتجات حسب الفئات",
             "icon": "sicon-d-rotate",
             "path": "home.custome_banner_for_cat",
-            "fields": []
+            "fields": [
+                {
+                    "id": "banner_section_title",
+                    "type": "string",
+                    "format": "text",
+                    "label": "عنوان المقطع",
+                    "description": null,
+                    "labelHTML": null,
+                    "placeholder": "Placeholder text ..",
+                    "icon": "sicon-format-text-alt",
+                    "value": "منتجاتنا",
+                    "multilanguage": false,
+                    "required": false,
+                    "minLength": "4",
+                    "maxLength": 30
+                },
+                {
+                    "id": "banner_title",
+                    "type": "string",
+                    "format": "text",
+                    "label": "عنوان البانر",
+                    "description": null,
+                    "labelHTML": null,
+                    "placeholder": "Placeholder text ..",
+                    "icon": "sicon-format-text-alt",
+                    "value": "الذهب",
+                    "multilanguage": false,
+                    "required": false,
+                    "minLength": "4",
+                    "maxLength": 30
+                },
+                {
+                    "id": "banner_background_img",
+                    "type": "string",
+                    "format": "image",
+                    "label": "صورة الخلفية",
+                    "description": null,
+                    "labelHTML": null,
+                    "placeholder": "e.g. https://hostname.com/image.png",
+                    "icon": "sicon-image",
+                    "value": null,
+                    "required": false
+                },
+                {
+                    "id": "banner_dropdown_list",
+                    "type": "items",
+                    "format": "dropdown-list",
+                    "label": "Dropdown List",
+                    "description": null,
+                    "labelHTML": null,
+                    "icon": "sicon-keyboard_arrow_down",
+                    "selected": [],
+                    "options": [
+                        {
+                            "label": null,
+                            "value": "Value 1",
+                            "key": "0e08923f-e5f0-4540-a89c-cee2175e9911"
+                        },
+                        {
+                            "label": null,
+                            "value": "Value 2",
+                            "key": "1dc2be21-f410-424f-8981-c8cb52c1d0da"
+                        }
+                    ],
+                    "source": "Categories",
+                    "multichoice": true,
+                    "searchable": true,
+                    "required": false,
+                    "value": []
+                }
+            ]
         }
     ],
     "support_url": "https://salla.com/",
