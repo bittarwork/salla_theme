@@ -1,0 +1,17 @@
+<section class="">
+	<h1 class="larg_heading font-slim text-center">{{ component.banner_section_title }}</h1>
+	<div class="relative overflow-hidden group">
+
+		<img class="w-full h-full object-cover more_than_half_hieght" src="{{ component.banner_background_img }}" alt="fixxed banner background"/>
+		<div class="absolute bottom-0 right-0 text-white p-4">
+			<p class="overlay-larg">{{ component.banner_title }}</p>
+		</div>
+		<div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 custom-mask">
+			{% for cat in component.banner_dropdown_list %}
+				<a href="{{ cat.url }}" class="text-black text-7xl hover:text-[#a5804a] hover:text-9xl transition-all duration-200">{{ cat.name }}
+					<span class="text-5xl">></span>
+				</a>
+			{% endfor %}
+		</div>
+	</div>
+</section>
