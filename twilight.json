@@ -1020,13 +1020,6 @@
                     "value": []
                 }
             ]
-        },
-        {
-            "key": "1222dda9-0001-480d-b946-eba7641e58b0",
-            "title": "تصفح حسب الفئات",
-            "icon": "sicon-caret-left-circle",
-            "path": "home.brows_by_cat_links",
-            "fields": []
         }
     ],
     "support_url": "https://salla.com/",
