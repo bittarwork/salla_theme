@@ -812,7 +812,65 @@
             "title": "خلفية متحركة مع كتابة",
             "icon": "sicon-arrow-swap",
             "path": "home.background-slide-and-title-hero-section",
-            "fields": []
+            "fields": [
+                {
+                    "id": "bg_slider_collection",
+                    "type": "collection",
+                    "format": "collection",
+                    "label": "الصور",
+                    "description": null,
+                    "labelHTML": null,
+                    "item_label": null,
+                    "icon": "sicon-list-add",
+                    "fields": [
+                        {
+                            "id": "bg_slider_collection.bg_slider_title",
+                            "type": "string",
+                            "format": "text",
+                            "label": "العنوان",
+                            "description": null,
+                            "labelHTML": null,
+                            "placeholder": "Placeholder text ..",
+                            "icon": "sicon-format-text-alt",
+                            "value": "مجوهرات ماس",
+                            "multilanguage": false,
+                            "required": false,
+                            "minLength": "1",
+                            "maxLength": "45"
+                        },
+                        {
+                            "id": "bg_slider_collection.bg_slider_secoundry_paragraph",
+                            "type": "string",
+                            "format": "text",
+                            "label": "النص الاضافي",
+                            "description": null,
+                            "labelHTML": null,
+                            "placeholder": "Placeholder text ..",
+                            "icon": "sicon-format-text-alt",
+                            "value": "العراقة والاصالة",
+                            "multilanguage": false,
+                            "required": false,
+                            "minLength": "1",
+                            "maxLength": "45"
+                        },
+                        {
+                            "id": "bg_slider_collection.image",
+                            "type": "string",
+                            "format": "image",
+                            "label": "Image",
+                            "description": null,
+                            "labelHTML": null,
+                            "placeholder": "e.g. https://hostname.com/image.png",
+                            "icon": "sicon-image",
+                            "value": null,
+                            "required": false
+                        }
+                    ],
+                    "value": [],
+                    "minLength": 1,
+                    "maxLength": 5
+                }
+            ]
         }
     ],
     "support_url": "https://salla.com/",
