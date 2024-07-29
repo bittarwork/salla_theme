@@ -490,17 +490,17 @@ select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/
 .-top-5{top:-1.25rem}
 .bottom-0{bottom:0px}
 .bottom-1{bottom:0.25rem}
+.bottom-10{bottom:2.5rem}
 .bottom-2{bottom:0.5rem}
 .left-0{left:0px}
 .right-0{right:0px}
+.right-10{right:2.5rem}
 .top-0{top:0px}
 .top-1\.5{top:0.375rem}
 .top-2{top:0.5rem}
 .top-24{top:6rem}
 .top-4{top:1rem}
 .top-full{top:100%}
-.bottom-10{bottom:2.5rem}
-.right-10{right:2.5rem}
 .-z-1{z-index:-1}
 .z-10{z-index:10}
 .z-20{z-index:20}
@@ -751,7 +751,6 @@ select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/
 .pb-8{padding-bottom:2rem}
 .pl-5{padding-left:1.25rem}
 .pr-14{padding-right:3.5rem}
-.pr-5{padding-right:1.25rem}
 .pt-0{padding-top:0px}
 .pt-1{padding-top:0.25rem}
 .pt-16{padding-top:4rem}
@@ -773,12 +772,12 @@ select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/
 .text-5xl{font-size:3rem;line-height:1}
 .text-6xl{font-size:3.75rem;line-height:1}
 .text-7xl{font-size:4.5rem;line-height:1}
+.text-9xl{font-size:8rem;line-height:1}
 .text-base{font-size:1rem;line-height:1.5rem}
 .text-lg{font-size:1.125rem;line-height:1.75rem}
 .text-sm{font-size:0.875rem;line-height:1.25rem}
 .text-xl{font-size:1.25rem;line-height:1.75rem}
 .text-xs{font-size:0.75rem;line-height:1rem}
-.text-9xl{font-size:8rem;line-height:1}
 .font-bold{font-weight:700}
 .font-medium{font-weight:500}
 .font-normal{font-weight:400}
@@ -6180,8 +6179,8 @@ salla-slider .swiper-pagination-bullets.swiper-pagination-horizontal {
 .md\:h-20{height:5rem}
 .md\:h-24{height:6rem}
 .md\:h-\[400px\]{height:400px}
-.md\:h-full{height:100%}
 .md\:h-auto{height:auto}
+.md\:h-full{height:100%}
 .md\:\!w-2\/4{width:50% !important}
 .md\:w-2\/4{width:50%}
 .md\:w-24{width:6rem}
