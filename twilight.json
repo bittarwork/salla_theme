@@ -871,6 +871,13 @@
                     "maxLength": 5
                 }
             ]
+        },
+        {
+            "key": "a9b118a9-95eb-4500-8b77-e3b74e717e71",
+            "title": "من نحن",
+            "icon": "sicon-crown",
+            "path": "home.about_us",
+            "fields": []
         }
     ],
     "support_url": "https://salla.com/",
