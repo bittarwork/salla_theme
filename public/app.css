@@ -6092,6 +6092,9 @@ salla-slider .swiper-pagination-bullet-active {
 salla-slider .swiper-pagination-bullet-active::before {
   color: #000;
 }
+salla-slider .swiper-pagination-bullet:hover {
+  color: #a5804a;
+}
 salla-slider .swiper-pagination-bullets.swiper-pagination-horizontal {
   display: flex;
   justify-content: center;
