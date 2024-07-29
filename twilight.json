@@ -970,9 +970,9 @@
                     "labelHTML": null,
                     "placeholder": "Placeholder text ..",
                     "icon": "sicon-format-text-alt",
-                    "value": "منتجاتنا",
+                    "value": null,
                     "multilanguage": false,
-                    "required": false,
+                    "required": true,
                     "minLength": "4",
                     "maxLength": 30
                 },
@@ -985,9 +985,9 @@
                     "labelHTML": null,
                     "placeholder": "Placeholder text ..",
                     "icon": "sicon-format-text-alt",
-                    "value": "الذهب",
+                    "value": null,
                     "multilanguage": false,
-                    "required": false,
+                    "required": true,
                     "minLength": "4",
                     "maxLength": 30
                 },
@@ -1001,7 +1001,7 @@
                     "placeholder": "e.g. https://hostname.com/image.png",
                     "icon": "sicon-image",
                     "value": null,
-                    "required": false
+                    "required": true
                 },
                 {
                     "id": "banner_dropdown_list",
@@ -1027,7 +1027,7 @@
                     "source": "Categories",
                     "multichoice": true,
                     "searchable": true,
-                    "required": false,
+                    "required": true,
                     "value": []
                 }
             ]
