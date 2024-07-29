@@ -499,6 +499,8 @@ select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/
 .top-24{top:6rem}
 .top-4{top:1rem}
 .top-full{top:100%}
+.bottom-10{bottom:2.5rem}
+.right-10{right:2.5rem}
 .-z-1{z-index:-1}
 .z-10{z-index:10}
 .z-20{z-index:20}
@@ -581,6 +583,7 @@ select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/
 .h-full{height:100%}
 .h-lg-banner{height:428px}
 .h-px{height:1px}
+.h-\[50vh\]{height:50vh}
 .max-h-0{max-height:0px}
 .max-h-8{max-height:2rem}
 .max-h-\[300px\]{max-height:300px}
@@ -748,6 +751,7 @@ select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/
 .pb-8{padding-bottom:2rem}
 .pl-5{padding-left:1.25rem}
 .pr-14{padding-right:3.5rem}
+.pr-5{padding-right:1.25rem}
 .pt-0{padding-top:0px}
 .pt-1{padding-top:0.25rem}
 .pt-16{padding-top:4rem}
@@ -774,6 +778,7 @@ select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/
 .text-sm{font-size:0.875rem;line-height:1.25rem}
 .text-xl{font-size:1.25rem;line-height:1.75rem}
 .text-xs{font-size:0.75rem;line-height:1rem}
+.text-9xl{font-size:8rem;line-height:1}
 .font-bold{font-weight:700}
 .font-medium{font-weight:500}
 .font-normal{font-weight:400}
@@ -827,9 +832,9 @@ select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/
 .transition-opacity{transition-property:opacity;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}
 .transition-shadow{transition-property:box-shadow;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}
 .duration-1000{transition-duration:1000ms}
+.duration-200{transition-duration:200ms}
 .duration-300{transition-duration:300ms}
 .duration-500{transition-duration:500ms}
-.duration-200{transition-duration:200ms}
 .ease-out{transition-timing-function:cubic-bezier(0, 0, 0.2, 1)}
 .s-hidden{display:none}
 .s-has-error{--tw-border-opacity:1;border-color:rgba(248, 113, 113, 1);border-color:rgba(248, 113, 113, var(--tw-border-opacity))}
@@ -6072,6 +6077,9 @@ body {
   background-color: #a5804a;
   color: #ffffff;
 }
+.text-slim {
+  font-weight: 100;
+}
 salla-slider .swiper-pagination-bullet {
   width: 30px; /* حجم الأيقونة */
   height: 30px; /* حجم الأيقونة */
@@ -6173,6 +6181,7 @@ salla-slider .swiper-pagination-bullets.swiper-pagination-horizontal {
 .md\:h-24{height:6rem}
 .md\:h-\[400px\]{height:400px}
 .md\:h-full{height:100%}
+.md\:h-auto{height:auto}
 .md\:\!w-2\/4{width:50% !important}
 .md\:w-2\/4{width:50%}
 .md\:w-24{width:6rem}
