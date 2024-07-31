@@ -10,10 +10,10 @@
 | component.links[].url              | string   |                                                                              |
 | position                           | int      | Sorting number start from zero                                               |
 #}
-<section class="">
-	<h1>{{ component.title }}</h1>
+<section class="my-10">
+	<h1 class="text-center text-5xl font-slim mb-5">{{ component.title }}</h1>
 	<div class="container">
-		<salla-slider type="carousel" controls-outer show-controls='false' id="main-links-{{ position }}">
+		<div class="">
 			<div slot="items">
 				{% if component.show_cats %}
 					{% for cat in component.categories %}
@@ -29,6 +29,10 @@
 						{% if link.title %}
 							<div class="swiper-slide slide--one-sixth">
 								<a href="{{ link.url }}" class="slide--cat-entry">
+									<div class="link-image-container">
+										<img src="{{ link.link_img_before }}" class="link-img-before"/>
+										<img src="{{ link.link_img_after }}" class="link-img-after"/>
+									</div>
 									<h2>{{ link.title }}</h2>
 								</a>
 							</div>
@@ -36,6 +40,6 @@
 					{% endfor %}
 				{% endif %}
 			</div>
-		</salla-slider>
+		</div>
 	</div>
 </section>

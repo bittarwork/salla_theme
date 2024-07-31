@@ -1,0 +1,34 @@
+.link-image-container {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 10px;
+}
+
+.link-img-before, .link-img-after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: opacity 0.3s ease;
+    border-radius: 50%;
+}
+
+.link-img-after {
+    opacity: 0;
+}
+
+.slide--cat-entry:hover .link-img-before {
+    opacity: 0;
+}
+
+.slide--cat-entry:hover .link-img-after {
+    opacity: 1;
+}
+
+.swiper-slide {
+    text-align: center;
+}
