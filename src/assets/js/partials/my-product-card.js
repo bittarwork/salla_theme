@@ -53,7 +53,7 @@ class CustomProductCard extends HTMLElement {
             <h3 class="custom-product-card-title">
               <span class="product-name"><a href="${this.product.url}">${this.product.name}</a></span>
               <div class="separator"></div>
-              <span class="product-price">${this.product.price || ''} ر.س</span>
+              <span class="product-price">${this.product.price || ''}</span>
             </h3>
             <p class="custom-product-card-description">${this.product.description || ''}</p>
             <button class="custom-product-card-add-to-cart-btn" aria-label="Add to cart">
