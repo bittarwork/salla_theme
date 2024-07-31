@@ -514,8 +514,8 @@ select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/
 .mx-10{margin-left:2.5rem;margin-right:2.5rem}
 .mx-2{margin-left:0.5rem;margin-right:0.5rem}
 .mx-3{margin-left:0.75rem;margin-right:0.75rem}
-.my-5{margin-top:1.25rem;margin-bottom:1.25rem}
 .my-10{margin-top:2.5rem;margin-bottom:2.5rem}
+.my-5{margin-top:1.25rem;margin-bottom:1.25rem}
 .-mb-52{margin-bottom:-13rem}
 .-mt-1{margin-top:-0.25rem}
 .-mt-62{margin-top:-248px}
@@ -6116,6 +6116,88 @@ salla-slider .swiper-pagination-bullets.swiper-pagination-horizontal {
 }
 .store-footer {
   background-color: #f0f0f0 !important;
+}
+/* Slider container to handle horizontal scroll */
+.slider-container {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 10px; /* Space between slides */
+}
+/* Styling for individual slides */
+.swiper-slide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  margin: 0 10px; /* Space between slides */
+}
+/* Styling for the link entries */
+.slide--cat-entry {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+/* Container for the images with hover effect */
+.link-image-container {
+  position: relative;
+  width: 40px; /* Adjust size for better visibility */
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+/* Common styling for images */
+.link-img-before, .link-img-after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.3s ease;
+  border-radius: 50%;
+}
+/* Initial state for hover images */
+.link-img-after {
+  opacity: 0;
+}
+/* Hover effect to switch images */
+.slide--cat-entry:hover .link-img-before {
+  opacity: 0;
+}
+.slide--cat-entry:hover .link-img-after {
+  opacity: 1;
+}
+/* Styling for icons */
+.link-image-container i {
+  font-size: 24px; /* Adjust icon size */
+  line-height: 40px; /* Vertically center icon */
+}
+/* Styling for the link titles */
+h2 {
+  font-size: 14px;
+  color: #333;
+  margin: 0;
+}
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+  .swiper-slide {
+    margin: 0 5px; /* Adjust spacing for smaller screens */
+  }
+  .link-image-container {
+    width: 30px;
+    height: 30px;
+  }
+  .link-image-container i {
+    font-size: 18px;
+    line-height: 30px;
+  }
+  h2 {
+    font-size: 12px;
+  }
 }
 .before\:text-orange-300::before{content:var(--tw-content);--tw-text-opacity:1;color:rgba(253, 186, 116, 1);color:rgba(253, 186, 116, var(--tw-text-opacity))}
 .first\:rounded-t-md:first-child{border-top-left-radius:0.375rem;border-top-right-radius:0.375rem}

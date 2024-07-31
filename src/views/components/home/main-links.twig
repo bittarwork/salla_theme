@@ -10,36 +10,37 @@
 | component.links[].url              | string   |                                                                              |
 | position                           | int      | Sorting number start from zero                                               |
 #}
+
 <section class="my-10">
 	<h1 class="text-center text-5xl font-slim mb-5">{{ component.title }}</h1>
-	<div class="container">
-		<div class="">
-			<div slot="items">
-				{% if component.show_cats %}
-					{% for cat in component.categories %}
-						<div class="swiper-slide slide--one-sixth">
-							<a href="{{ cat.url }}" class="slide--cat-entry">
+	<salla-slider id="link-slider" show-controls="true" type="carousel" slides-per-view="auto" centered="true">
+		<div slot="items" class="slider-container">
+			{% if component.show_cats %}
+				{% for cat in component.categories %}
+					<div class="swiper-slide">
+						<a href="{{ cat.url }}" class="slide--cat-entry">
+							<div class="link-image-container">
 								<i class="{{ cat.icon }}"></i>
-								<h2>{{ cat.name }}</h2>
+							</div>
+							<h2>{{ cat.name }}</h2>
+						</a>
+					</div>
+				{% endfor %}
+			{% else %}
+				{% for link in component.links %}
+					{% if link.title %}
+						<div class="swiper-slide">
+							<a href="{{ link.url }}" class="slide--cat-entry">
+								<div class="link-image-container">
+									<img src="{{ link.link_img_before }}" class="link-img-before"/>
+									<img src="{{ link.link_img_after }}" class="link-img-after"/>
+								</div>
+								<h2>{{ link.title }}</h2>
 							</a>
 						</div>
-					{% endfor %}
-				{% else %}
-					{% for link in component.links %}
-						{% if link.title %}
-							<div class="swiper-slide slide--one-sixth">
-								<a href="{{ link.url }}" class="slide--cat-entry">
-									<div class="link-image-container">
-										<img src="{{ link.link_img_before }}" class="link-img-before"/>
-										<img src="{{ link.link_img_after }}" class="link-img-after"/>
-									</div>
-									<h2>{{ link.title }}</h2>
-								</a>
-							</div>
-						{% endif %}
-					{% endfor %}
-				{% endif %}
-			</div>
+					{% endif %}
+				{% endfor %}
+			{% endif %}
 		</div>
-	</div>
+	</salla-slider>
 </section>

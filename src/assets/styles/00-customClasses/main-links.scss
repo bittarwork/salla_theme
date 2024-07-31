@@ -1,12 +1,41 @@
-.link-image-container {
-    position: relative;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    overflow: hidden;
-    margin: 0 auto 10px;
+
+/* Slider container to handle horizontal scroll */
+.slider-container {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 10px; /* Space between slides */
 }
 
+/* Styling for individual slides */
+.swiper-slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    margin: 0 10px; /* Space between slides */
+}
+
+/* Styling for the link entries */
+.slide--cat-entry {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+}
+
+/* Container for the images with hover effect */
+.link-image-container {
+    position: relative;
+    width: 40px; /* Adjust size for better visibility */
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+/* Common styling for images */
 .link-img-before, .link-img-after {
     position: absolute;
     top: 0;
@@ -17,10 +46,12 @@
     border-radius: 50%;
 }
 
+/* Initial state for hover images */
 .link-img-after {
     opacity: 0;
 }
 
+/* Hover effect to switch images */
 .slide--cat-entry:hover .link-img-before {
     opacity: 0;
 }
@@ -29,6 +60,36 @@
     opacity: 1;
 }
 
-.swiper-slide {
-    text-align: center;
+/* Styling for icons */
+.link-image-container i {
+    font-size: 24px; /* Adjust icon size */
+    line-height: 40px; /* Vertically center icon */
+}
+
+/* Styling for the link titles */
+h2 {
+    font-size: 14px;
+    color: #333;
+    margin: 0;
+}
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+    .swiper-slide {
+        margin: 0 5px; /* Adjust spacing for smaller screens */
+    }
+
+    .link-image-container {
+        width: 30px;
+        height: 30px;
+    }
+
+    .link-image-container i {
+        font-size: 18px;
+        line-height: 30px;
+    }
+
+    h2 {
+        font-size: 12px;
+    }
 }
