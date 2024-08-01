@@ -19,7 +19,7 @@
 {% extends "layouts.master" %}
 {% block content %}
 	<div class="container px-2.5 ms:px-5 mb-10">
-		<h1 class="font-slim text-5xl rtl:pl-3 ltr:pr-3" id="page-main-title">{{ page.title|raw }}</h1>
+		<h1 class="font-bold text-xl rtl:pl-3 ltr:pr-3" id="page-main-title">{{ page.title|raw }}</h1>
 		{# add breadcumbs container in pages to make a space in case breadcrumbs is off #}
 		<nav class="breadcrumbs w-full py-5">
 			<salla-breadcrumb></salla-breadcrumb>
