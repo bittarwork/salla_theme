@@ -591,7 +591,7 @@
             "key": "b89edc4a-ce0b-468f-8323-2da48147bb32",
             "title": "صور مربعة",
             "icon": "sicon-image",
-            "path": "home.enhanced-square-banners",
+            "path": "home.square-banners",
             "fields": [
                 {
                     "type": "static",
