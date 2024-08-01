@@ -7,17 +7,11 @@
 | position        | Int       | Sorting number start from zero                                   |
 #}
 
-<section id="best-offers-{{ position }}-slider" class="s-block s-block--best-offers container overflow-hidden">
-  {% if products|length %}
-    <salla-products-slider
-            source="selected"
-            limit="{{ limit }}"
-            autoplay
-            source-value="[{{ products|map((product) => product.id)|join(',') }}]"
-            display-all-url="{{display_all_url}}"
-            block-title="{{ title }}"
-            block-subTitle="{{ sub_title|raw }}"
-            slider-id="slider-with-bg-{{ position }}"
-    ></salla-products-slider>
-  {% endif %}
+<section id="best-offers-{{ position }}-slider" class="s-block s-block--best-offers container py-12 px-6 bg-gray-900 text-white overflow-hidden relative">
+	{% if products|length %}
+		<div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-40"></div>
+		<div class="relative z-10">
+			<salla-products-slider source="selected" limit="{{ limit }}" product-card-component="custom-salla-product-card" autoplay source-value="[{{ products|map((product) => product.id)|join(',') }}]" display-all-url="{{display_all_url}}" block-title="{{ title }}" block-subtitle="{{ sub_title|raw }}" slider-id="slider-with-bg-{{ position }}"></salla-products-slider>
+		</div>
+	{% endif %}
 </section>

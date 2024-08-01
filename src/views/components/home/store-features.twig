@@ -7,16 +7,16 @@
 | items[].text  | string | Subtitle for the feature                                         |
 | position      | Int    | Sorting number start from zero                                   |
 #}
-<section class="s-block s-block--features container">
-    <div class="grid grid-cols-[repeat(2,minmax(0,1fr))] md:grid-cols-[repeat(3,minmax(0,1fr))] gap-4 sm:gap-6 xl:gap-8">
-      {% for item in items %}
-          <div class="s-block--features__item">
-            <div class="feature-icon">
-              <i class="{{ item.icon }}"></i>
-            </div>
-            <h2>{{ item.title }}</h2>
-            <p>{{ item.text }}</p>
-          </div>
-      {% endfor %}
-    </div>
+<section class="s-block s-block--features container py-12">
+	<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+		{% for item in items %}
+			<div class="bg-white border border-gray-200 rounded-lg shadow-md p-6 flex flex-col items-center">
+				<div class="text-blue-500 mb-4">
+					<i class="{{ item.icon }} text-3xl"></i>
+				</div>
+				<h2 class="text-xl font-semibold mb-2">{{ item.title }}</h2>
+				<p class="text-gray-600 text-center">{{ item.text }}</p>
+			</div>
+		{% endfor %}
+	</div>
 </section>
