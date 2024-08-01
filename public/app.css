@@ -705,6 +705,7 @@ select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/
 .object-center{-o-object-position:center;object-position:center}
 .\!p-0{padding:0px !important}
 .p-1{padding:0.25rem}
+.p-10{padding:2.5rem}
 .p-2{padding:0.5rem}
 .p-2\.5{padding:0.625rem}
 .p-3{padding:0.75rem}
@@ -6119,23 +6120,14 @@ salla-slider .swiper-pagination-bullets.swiper-pagination-horizontal {
   background-color: #f0f0f0 !important;
 }
 /* Slider container to handle horizontal scroll */
-.slider-container {
+.custom-slider-container {
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
   gap: 10px; /* Space between slides */
 }
-/* Styling for individual slides */
-.swiper-slide {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  box-sizing: border-box;
-  margin: 0 10px; /* Space between slides */
-}
 /* Styling for the link entries */
-.slide--cat-entry {
+.custom-slide-cat-entry {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -6143,16 +6135,16 @@ salla-slider .swiper-pagination-bullets.swiper-pagination-horizontal {
   text-decoration: none;
 }
 /* Container for the images with hover effect */
-.link-image-container {
+.custom-link-image-container {
   position: relative;
-  width: 40px; /* Adjust size for better visibility */
-  height: 40px;
+  width: 20vh;
+  height: 20vh;
   border-radius: 50%;
   overflow: hidden;
   margin-bottom: 10px;
 }
 /* Common styling for images */
-.link-img-before, .link-img-after {
+.custom-link-img-before, .custom-link-img-after {
   position: absolute;
   top: 0;
   left: 0;
@@ -6162,31 +6154,31 @@ salla-slider .swiper-pagination-bullets.swiper-pagination-horizontal {
   border-radius: 50%;
 }
 /* Initial state for hover images */
-.link-img-after {
+.custom-link-img-after {
   opacity: 0;
 }
 /* Hover effect to switch images */
-.slide--cat-entry:hover .link-img-before {
+.custom-slide-cat-entry:hover .custom-link-img-before {
   opacity: 0;
 }
-.slide--cat-entry:hover .link-img-after {
+.custom-slide-cat-entry:hover .custom-link-img-after {
   opacity: 1;
 }
 /* Styling for icons */
-.link-image-container i {
+.custom-link-image-container i {
   font-size: 24px; /* Adjust icon size */
   line-height: 40px; /* Vertically center icon */
 }
 /* Responsive design adjustments */
 @media (max-width: 768px) {
-  .swiper-slide {
+  .custom-slider-slide {
     margin: 0 5px; /* Adjust spacing for smaller screens */
   }
-  .link-image-container {
-    width: 30px;
-    height: 30px;
+  .custom-link-image-container {
+    width: 15vh;
+    height: 15vh;
   }
-  .link-image-container i {
+  .custom-link-image-container i {
     font-size: 18px;
     line-height: 30px;
   }

@@ -1,45 +1,33 @@
-{#
-| Variable                           | Type     | Description                                                                  |
-|------------------------------------|----------|------------------------------------------------------------------------------|
-| component                          | object   | Contains merchant settings for fields from twilight.json `component` section |
-| component.merge_with_top_component | bool     |                                                                              |
-| component.title                    | ?string  |                                                                              |
-| component.links                    | object[] | list of links                                                                |
-| component.links[].icon             | string   |                                                                              |
-| component.links[].title            | string   |                                                                              |
-| component.links[].url              | string   |                                                                              |
-| position                           | int      | Sorting number start from zero                                               |
-#}
-
-<section class="my-10">
-	<h1 class="text-center text-5xl font-slim mb-5">{{ component.title }}</h1>
-
-	<div slot="items" class="slider-container">
-		{% if component.show_cats %}
-			{% for cat in component.categories %}
-				<div class="swiper-slide">
-					<a href="{{ cat.url }}" class="slide--cat-entry">
-						<div class="link-image-container">
-							<i class="{{ cat.icon }}"></i>
-						</div>
-						<h2>{{ cat.name }}</h2>
-					</a>
-				</div>
-			{% endfor %}
-		{% else %}
-			{% for link in component.links %}
-				{% if link.title %}
-					<div class="swiper-slide">
-						<a href="{{ link.url }}" class="slide--cat-entry">
-							<div class="link-image-container">
-								<img src="{{ link.link_img_before }}" class="link-img-before"/>
-								<img src="{{ link.link_img_after }}" class="link-img-after"/>
+<section class="my-10 custom-slider-section">
+	<h1 class="text-center custom-slider-title">{{ component.title }}</h1>
+	<div class="continer p-10">
+		<div slot="items" class="custom-slider-container">
+			{% if component.show_cats %}
+				{% for cat in component.categories %}
+					<div class="custom-slider-slide">
+						<a href="{{ cat.url }}" class="custom-slide-cat-entry">
+							<div class="custom-link-image-container">
+								<i class="{{ cat.icon }}"></i>
 							</div>
-							<h2>{{ link.title }}</h2>
+							<h2>{{ cat.name }}</h2>
 						</a>
 					</div>
-				{% endif %}
-			{% endfor %}
-		{% endif %}
+				{% endfor %}
+			{% else %}
+				{% for link in component.links %}
+					{% if link.title %}
+						<div class="custom-slider-slide">
+							<a href="{{ link.url }}" class="custom-slide-cat-entry">
+								<div class="custom-link-image-container">
+									<img src="{{ link.link_img_before }}" class="custom-link-img-before"/>
+									<img src="{{ link.link_img_after }}" class="custom-link-img-after"/>
+								</div>
+								<h2>{{ link.title }}</h2>
+							</a>
+						</div>
+					{% endif %}
+				{% endfor %}
+			{% endif %}
+		</div>
 	</div>
 </section>
