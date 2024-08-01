@@ -7,7 +7,7 @@
 | position        | Int        | Sorting number start from zero                                   |
 | limit           | Int        | Number of products to be shown
 #}
-{% set is_vertical = theme.settings.get('vertical_fixed_products', true) %}
+{# {% set is_vertical = theme.settings.get('vertical_fixed_products', true) %}
 <section class="s-block container">
 	{% if title %}
 		<div class="s-block__title">
@@ -23,4 +23,9 @@
 	{% endif %}
 
 	<salla-products-list product-card-component="custom-product-card" source="selected" limit="{{ limit }}" source-value="[{{ products|map((product) => product.id)|join(',') }}]" class="{{is_vertical ? 'vertical-products' : 'horizontal-products'}}" {{is_vertical ? '' : 'horizontal-cards'}}></salla-products-list>
-</section>
+</section> #}
+<custom-salla-product-card
+  product='{"id": 1, "name": "Product Name", "description": "Product Description", "price": "$10.00", "image": "path/to/image.jpg", "is_out_of_stock": false}'
+  horizontal="true"
+  show-wishlist="true">
+</custom-salla-product-card>

@@ -1,68 +1,70 @@
-class CustomProductCard extends HTMLElement {
-    constructor() {
-        super();
-        this.attachShadow({ mode: 'open' });
+class ProductCard extends HTMLElement {
+  constructor() {
+    super();
+    this.product = null;
+    this.horizontal = false;
+    this.showWishlist = false;
+  }
+
+  connectedCallback() {
+    // Parse product data from the attribute
+    this.product = JSON.parse(this.getAttribute('product'));
+
+    // Set properties from attributes
+    this.horizontal = this.getAttribute('horizontal') === 'true';
+    this.showWishlist = this.getAttribute('show-wishlist') === 'true';
+
+    // Add CSS classes and ID
+    this.classList.add('product-block');
+    this.id = `product_${this.product.id}`;
+    if (this.product.is_out_of_stock) {
+      this.classList.add('is-out');
     }
 
-    connectedCallback() {
-        this.product = this.product || JSON.parse(this.getAttribute('product'));
-        this.render();
-        this.initFavoriteIcon();
+    // Ensure Salla library is ready before rendering
+    salla.onReady(() => {
+      let fitType = salla.config.get('store.settings.product.fit_type');
+      if (fitType) {
+        this.classList.add(fitType);
+      }
+      this.render();
+      if (!salla.lang.translationsLoaded) {
+        salla.lang.onLoaded(() => this.render());
+      }
+    });
+  }
+
+  render() {
+    // Determine source page
+    this.source = salla.config.get('page.slug');
+    if (this.source == 'landing-page') {
+      this.hideAddBtn = true;
+      this.showQuantity = true;
     }
 
-    initFavoriteIcon() {
-        if (window.app?.status === 'ready') {
-            this.updateFavoriteIcon();
-        } else {
-            document.addEventListener('theme::ready', () => this.updateFavoriteIcon());
-        }
-    }
+    // Fetch translations
+    const remained = salla.lang.get('pages.products.remained');
+    const outOfStock = salla.lang.get('pages.products.out_of_stock');
+    const calories = salla.lang.get('pages.products.calories');
 
-    updateFavoriteIcon() {
-        if (!salla.config.isGuest()) {
-            salla.storage.get('salla::wishlist', []).forEach(id => {
-                if (id === this.product.id) {
-                    this.toggleFavoriteIcon(true);
-                }
-            });
-        }
-    }
+    // Generate HTML content
+    this.innerHTML = `
+      <div class="product-block__thumb">
+        <img class="lazy-load" src="${this.product.image}" alt="${this.product.name}">
+        <span class="promotion-title">${this.product.promotion_title || ''}</span>
+      </div>
+      <div class="product-block__info">
+        <h3>${this.product.name}</h3>
+        <p class="product-price">${this.product.price}</p>
+        <div class="product-description">${this.product.description}</div>
+        <button class="add-to-cart">أضف للسلة</button>
+      </div>
+    `;
 
-    toggleFavoriteIcon(isAdded) {
-        const btn = this.shadowRoot.querySelector('.s-product-card-wishlist-btn');
-        if (btn) {
-            btn.classList.toggle('s-product-card-wishlist-added', isAdded);
-            btn.classList.toggle('not-added', !isAdded);
-            btn.classList.toggle('pulse-anime', isAdded);
-        }
-    }
-
-    render() {
-        this.shadowRoot.innerHTML = `
-        <div class="custom-product-card">
-          <div class="custom-product-promotion-title">${this.product.promotion_title || ''}</div>
-          <button class="s-product-card-wishlist-btn" aria-label="Add to wishlist" onclick="salla.wishlist.toggle(${this.product.id})">
-            <i class="sicon-heart"></i>
-          </button>
-          <div class="custom-product-card-image">
-            <a href="${this.product.url}">
-              <img src="${this.product.image?.url || ''}" alt="${this.product.image?.alt || ''}" loading="lazy"/>
-            </a>
-          </div>
-          <div class="custom-product-card-content">
-            <h3 class="custom-product-card-title">
-              <span class="product-name"><a href="${this.product.url}">${this.product.name}</a></span>
-              <div class="separator"></div>
-              <span class="product-price">${this.product.price || ''}</span>
-            </h3>
-            <p class="custom-product-card-description">${this.product.description || ''}</p>
-            <button class="custom-product-card-add-to-cart-btn" aria-label="Add to cart">
-              <i class="fas fa-shopping-cart" style="margin-right: 8px;"></i> أضف الى السلة
-            </button>
-          </div>
-        </div>
-      `;
-    }
+    // Lazy load images
+    document.lazyLoadInstance?.update(document.querySelectorAll('.product-block__thumb .lazy-load'));
+  }
 }
 
-customElements.define('custom-product-card', CustomProductCard);
+// Register custom element
+customElements.define('custom-salla-product-card', ProductCard);
