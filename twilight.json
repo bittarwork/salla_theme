@@ -589,7 +589,7 @@
         },
         {
             "key": "b89edc4a-ce0b-468f-8323-2da48147bb32",
-            "title": "صور مربعة (محسنة)",
+            "title": "صور مربعة",
             "icon": "sicon-image",
             "path": "home.enhanced-square-banners",
             "fields": [
@@ -597,7 +597,7 @@
                     "type": "static",
                     "format": "description",
                     "id": "with-bg",
-                    "value": "<div style='padding-top:10px;margin-bottom:30px;border:1px solid #ebebeb;border-radius:5px;text-align:center;overflow:hidden'><h6 style='margin-bottom:10px'>معاينة العنصر</h6><img src='https://cdn.salla.network/images/themes/raed/square-photos.jpg?v=1.1'></div>"
+                    "value": "<div ><h6 >معاينة العنصر</h6><img src='https://cdn.salla.network/images/themes/raed/square-photos.jpg?v=1.1'></div>"
                 },
                 {
                     "id": "banners",
@@ -607,7 +607,7 @@
                     "minLength": 1,
                     "maxLength": 5,
                     "label": "قائمة الصور",
-                    "item_label": "صورة ",
+                    "item_label": "صورة",
                     "value": [],
                     "fields": [
                         {
@@ -618,7 +618,7 @@
                             "id": "banners.image",
                             "format": "image",
                             "required": true,
-                            "placeholder": "",
+                            "placeholder": null,
                             "description": "* المقاس المناسب للصورة هو 640×427 بكسل",
                             "settings": {
                                 "height": 427,
@@ -631,7 +631,7 @@
                             "label": "الرابط",
                             "id": "banners.url",
                             "value": null,
-                            "description": "",
+                            "description": null,
                             "required": false,
                             "format": "variable-list",
                             "searchable": true,
