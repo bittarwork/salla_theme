@@ -85,7 +85,7 @@
 			outline: none;
 			opacity: 1;
 			transition: opacity 0.2s;
-			border-radius: 5px;
+
 		}
 
 		/* تخصيص السلايدر للتوافق مع جميع المتصفحات */
@@ -109,7 +109,7 @@
 		.slider-thumb-icon {
 			position: absolute;
 			top: 50%;
-			left: 0;
+			right: 0;
 			transform: translate(-50%, -50%);
 			pointer-events: none; /* منع التفاعل مع الأيقونة */
 			display: flex;
@@ -136,46 +136,46 @@
 {% endblock %}
 {% block scripts %}
 	 <script>
-	    function updateSliderValue(optionId) {
-	        var slider = document.getElementById('option-' + optionId);
-	        var valueSpan = document.getElementById('slider-value-' + optionId);
-	        var thumbIcon = document.getElementById('thumb-icon-' + optionId);
-	        var selectedIndex = slider.value;
-	        var options = {{ product.options|json_encode|raw }};
-	
-	        for (var i = 0; i < options.length; i++) {
-	            if (options[i].id === optionId) {
-	                var optionDetails = options[i].details;
-	                valueSpan.textContent = optionDetails[selectedIndex].name;
-	
-	                // احسب موضع الأيقونة بناءً على قيمة السلايدر الحالية
-	                var sliderWidth = slider.clientWidth;
-	                var sliderMax = slider.max;
-	                var positionPercent = (slider.value / sliderMax) * 100;
-	
-	                // احسب الموضع الصحيح للأيقونة
-	                var iconPosition = (positionPercent / 100) * sliderWidth;
-	
-	                // في حالة اللغات من اليمين إلى اليسار (RTL)، قم بتغيير الحساب
-	                if (document.dir === 'rtl') {
-	                    iconPosition = sliderWidth - iconPosition;
-	                }
-	
-	                // ضبط موضع الأيقونة والقيمة
-	                thumbIcon.style.left = `${iconPosition}px`;
-	
-	                break;
-	            }
-	        }
-	    }
-	
-	    // للتأكد من ظهور الأيقونة في الموضع الصحيح عند تحميل الصفحة
-	    document.addEventListener("DOMContentLoaded", function() {
-	        var sliders = document.querySelectorAll('input[type="range"]');
-	        sliders.forEach(function(slider) {
-	            var optionId = slider.id.split('-')[1];
-	            updateSliderValue(optionId);
-	        });
-	    });
-	</script>
+		    function updateSliderValue(optionId) {
+		        var slider = document.getElementById('option-' + optionId);
+		        var valueSpan = document.getElementById('slider-value-' + optionId);
+		        var thumbIcon = document.getElementById('thumb-icon-' + optionId);
+		        var selectedIndex = slider.value;
+		        var options = {{ product.options|json_encode|raw }};
+		
+		        for (var i = 0; i < options.length; i++) {
+		            if (options[i].id === optionId) {
+		                var optionDetails = options[i].details;
+		                valueSpan.textContent = optionDetails[selectedIndex].name;
+		
+		                // احسب موضع الأيقونة بناءً على قيمة السلايدر الحالية
+		                var sliderWidth = slider.clientWidth;
+		                var sliderMax = slider.max;
+		                var positionPercent = (slider.value / sliderMax) * 100;
+		
+		                // احسب الموضع الصحيح للأيقونة
+		                var iconPosition = (positionPercent / 100) * sliderWidth;
+		
+		                // في حالة اللغات من اليمين إلى اليسار (RTL)، قم بتغيير الحساب
+		                if (document.dir === 'rtl') {
+		                    iconPosition = sliderWidth - iconPosition;
+		                }
+		
+		                // ضبط موضع الأيقونة والقيمة
+		                thumbIcon.style.left = `${iconPosition}px`;
+		
+		                break;
+		            }
+		        }
+		    }
+		
+		    // للتأكد من ظهور الأيقونة في الموضع الصحيح عند تحميل الصفحة
+		    document.addEventListener("DOMContentLoaded", function() {
+		        var sliders = document.querySelectorAll('input[type="range"]');
+		        sliders.forEach(function(slider) {
+		            var optionId = slider.id.split('-')[1];
+		            updateSliderValue(optionId);
+		        });
+		    });
+		</script>
 {% endblock %}
