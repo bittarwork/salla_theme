@@ -181,7 +181,7 @@
 				<h2 class="text-xl sm:text-2xl mb-2 inline-block mr-4">منتجات قد تعجبك</h2>
 				<div class="w-[20vw] sm:w-[10vw] h-[1px] bg-[#a5804a] inline-block"></div>
 			</div>
-			<salla-products-slider source="related" source-value="{{product.id}}" display-all-url></salla-products-slider>
+			<salla-products-slider product-card-component="custom-salla-product-card" class="flex-1 min-w-0 overflow-auto " source="related" source-value="{{product.id}}" display-all-url></salla-products-slider>
 		</div>
 	</div>
 {% endblock %}

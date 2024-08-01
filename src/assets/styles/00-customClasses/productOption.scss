@@ -1,0 +1,57 @@
+
+    .product-option-slider {
+        position: relative;
+        width: 100%;
+    }
+
+    .slider-container {
+        position: relative;
+        width: 100%;
+    }
+
+    .slider-label {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    input[type="range"] {
+        -webkit-appearance: none;
+        width: 100%;
+        height: 1px;
+        background: #a5804a;
+        outline: none;
+        opacity: 1;
+        transition: opacity .2s;
+    }
+
+    input[type="range"]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 24px;
+        height: 24px;
+        background: none;
+        cursor: pointer;
+    }
+
+    input[type="range"]::-moz-range-thumb {
+        width: 24px;
+        height: 24px;
+        background: none;
+        cursor: pointer;
+    }
+
+    .slider-thumb-icon {
+        position: absolute;
+        top: -12px; /* Half the height of the icon to center it vertically */
+        left: 0;
+        color: #a5804a;
+        pointer-events: none; /* To allow slider thumb dragging */
+    }
+
+    .slider-value {
+        position: absolute;
+        top: -40px;
+        color: #a5804a;
+        font-size: 16px;
+        white-space: nowrap;
+    }
