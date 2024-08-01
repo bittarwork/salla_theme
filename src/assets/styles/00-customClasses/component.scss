@@ -20,6 +20,27 @@ body {
 //  text classes : 
 .text-slim  {
     font-weight: 100;
+
+}
+.custom-product-card-add-to-cart-btn {
+  background-color: #a5804a;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-size: 1em;
+  padding: 0.8vh 1vw;
+  transition: background-color 0.5s ease, color 0.5s ease;
+  align-self: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1vh;
+  border-radius: 0; 
+}
+
+.custom-product-card-add-to-cart-btn:hover {
+  background-color: #f0f0f0;
+  color: #a5804a;
 }
 // slider for hero section :
 salla-slider {
@@ -59,3 +80,5 @@ salla-slider {
       bottom: 20px; 
     }
   }
+
+
