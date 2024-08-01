@@ -83,34 +83,39 @@
 #}
 {% extends "layouts.master" %}
 {% block content %}
-	<div class="container overflow-hidden">
+	<div
+		class="container overflow-hidden">
+		<!-- Page Main Title -->
 		<h1 class="font-slim text-4xl sm:text-7xl rtl:pl-3 ltr:pr-3" id="page-main-title">{{ page.title|raw }}</h1>
-		<custom-main-menu class="text-xl sm:text-2xl"></custom-main-menu>
-		<div class="flex flex-col gap-4 items-center sm:items-start sm:flex-row" id="product-{{ product.id }}" style="justify-content: center;">
 
-			<div class="main-content w-full sm:w-1/2 sm:overflow-hidden sm:pb-16 flex-1 max-w-[90vw] sm:max-w-[35vw]">
+		<!-- Custom Main Menu -->
+		<custom-main-menu class="text-xl sm:text-2xl"></custom-main-menu>
+
+		<div
+			class="flex flex-col sm:flex-row gap-4 items-center sm:items-start justify-center" id="product-{{ product.id }}">
+
+			<!-- Main Content -->
+			<div class="main-content w-full sm:w-1/2 flex-1 max-w-[90vw] sm:max-w-[35vw]">
 
 				{% hook 'product:single.description.start' %}
 
+				<!-- Product Header -->
 				<div class="text-center">
-					<h1 class="text-7xl sm:text-4xl leading-10 font-slim inline-block">{{ product.name }}</h1>
+					<h1 class="text-4xl sm:text-3xl leading-10 font-slim inline-block">{{ product.name }}</h1>
 					<span class="inline-block mx-4 border-b border-[#a5804a] w-[110px]"></span>
-					{# <h2 class="text-2xl font-slim inline-block">
-																					{{ product.starting_price ? product.starting_price|money : product.price|money }}
-																				</h2> #}
 					{% if product.promotion_title %}
 						<div class="text-2xl font-slim inline-block">{{ product.promotion_title }}</div>
 					{% endif %}
 				</div>
 
+				<!-- Product Description -->
 				<div class="product__description text-xl sm:text-2xl p-2 px-5 sm:p-1 leading-7 mb-3 text-center max-w-[90vw] sm:max-w-[35vw] mx-auto">
 					{% set product_desc = product.description|replace({"&nbsp;":"\n"}) %}
 					{% if product.has_read_more %}
 						<article class="article article--main relative leading-8 overflow-hidden transition-all duration-300 py-4 max-h-[5.25rem]" id="more-content">
 							{{ product_desc|raw }}
 						</article>
-
-						{# Read More Button #}
+						<!-- Read More Button -->
 						<a id="btn-show-more" class="link--primary inline-block mt-2 cursor-pointer">
 							{{ trans('pages.products.read_more') }}
 						</a>
@@ -123,19 +128,18 @@
 
 				{% hook 'product:single.description' %}
 
+				<!-- Product Form -->
 				<form class="form product-form text-center max-w-[90vw] sm:max-w-[35vw] mx-auto" enctype="multipart/form-data" method="post" onsubmit="return salla.form.onSubmit('cart.addItem', event)">
 					<input type="hidden" name="id" value="{{ product.id }}">
 
 					{% hook 'product:single.form.start' %}
-
 					{% include 'pages.partials.product.options' %}
-
 					{% hook 'product:single.form.end' %}
-					<section
-						class="text-center mt-10">
-						{# Add to cart #}
+
+					<!-- Add to Cart Button -->
+					<section class="text-center mt-10">
 						<div class="flex justify-center">
-							<button class="custom-product-card-add-to-cart-btn" aria-label="Add to wishlist" onclick="salla.wishlist.toggle(${this.product.id})">
+							<button class="custom-product-card-add-to-cart-btn" aria-label="Add to wishlist" onclick="salla.wishlist.toggle({{ product.id }})">
 								أضف الى السلة
 								<i class="fas fa-shopping-cart mr-2"></i>
 							</button>
@@ -147,7 +151,8 @@
 
 			</div>
 
-			<div class="sidebar sm:w-1/2 pb-8 sm:pb-16 overflow-hidden flex-1 max-w-[90vw] sm:max-w-[35vw]">
+			<!-- Sidebar -->
+			<div class="sidebar sm:w-1/2 pb-8 sm:pb-16 flex-1 max-w-[90vw] sm:max-w-[35vw]">
 				<salla-slider id="details-slider-{{ product.id }}" type="thumbs" loop="true" auto-play pagination show-controls="false" style="height: 45vh;">
 					<div slot="items" class="flex flex-wrap">
 						{% for image in product.images %}
@@ -166,17 +171,16 @@
 					</div>
 				</salla-slider>
 			</div>
+
 		</div>
 
-
+		<!-- Related Products -->
 		<div class="container p-4 sm:p-10">
-			<div class="container my-10 text-right" style="margin-right: 10px;">
-				<h2 class="text-xl sm:text-2xl mb-2" style="display: inline-block; margin-left: 10px;">منتجات قد تعجبك</h2>
+			<div class="container my-10 text-right">
+				<h2 class="text-xl sm:text-2xl mb-2 inline-block mr-4">منتجات قد تعجبك</h2>
 				<div class="w-[20vw] sm:w-[10vw] h-[1px] bg-[#a5804a] inline-block"></div>
 			</div>
-
-			<salla-products-slider source="related" product-card-component="custom-product-card" source-value="{{product.id}}" display-all-url></salla-products-slider>
+			<salla-products-slider source="related" source-value="{{product.id}}" display-all-url></salla-products-slider>
 		</div>
 	</div>
-	{# Similar Products Area #}
 {% endblock %}
