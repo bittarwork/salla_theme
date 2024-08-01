@@ -119,6 +119,8 @@ class CustomProductCard extends HTMLElement {
   .custom-product-card-image {
     height: auto;
     max-height: 30vh;
+    min-height: 30vh;
+
     overflow: hidden;
     border-bottom: 1px solid #eee;
   }
@@ -146,6 +148,7 @@ class CustomProductCard extends HTMLElement {
     font-size: 0.9em;
     text-align: right;
     font-weight: 100;
+    min-height:10vh;
     margin: 1vh 0;
   }
   
