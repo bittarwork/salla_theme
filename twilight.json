@@ -6,10 +6,6 @@
     "repository": "https://github.com/SallaApp/theme-raed",
     "author_email": "support@salla.sa",
     "features": [
-        "mega-menu",
-        "fonts",
-        "color",
-        "breadcrumb",
         "unite-cards-height",
         "component-featured-products",
         "component-fixed-banner",
