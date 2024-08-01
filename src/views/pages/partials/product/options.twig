@@ -28,16 +28,26 @@
 | product.options[].details[].is_selected         | bool                       | Does current option selected? (useful in cart page)                                                         |
 | product.options[].details[].is_out              | bool                       | Does current option out of stock?                                                                           |
 #}
+{% block head %}
+	<!-- روابط CSS لـ Font Awesome -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+{% endblock %}
+
 {% if product.options|length %}
 	<div id="product-options">
 		{% for option in product.options %}
 			{% if option.type == 'single-option' %}
 				<div class="product-option-slider">
 					<span class="slider-label text-5xl">القياس:</span>
-					<div class="slider-container">
-						<input type="range" id="option-{{ option.id }}" name="option-{{ option.id }}" min="0" max="{{ option.details|length - 1 }}" value="0" oninput="updateSliderValue({{ option.id }})">
+					<div
+						class="slider-container">
+						<!-- السلايدر -->
+						<input
+						type="range" id="option-{{ option.id }}" name="option-{{ option.id }}" min="0" max="{{ option.details|length - 1 }}" value="0" oninput="updateSliderValue({{ option.id }})">
+						<!-- عنصر الأيقونة المتحرك -->
 						<div class="slider-thumb-icon" id="thumb-icon-{{ option.id }}">
 							<i class="fas fa-gem"></i>
+							<!-- القيمة الحالية للسلايدر -->
 							<div class="slider-value" id="slider-value-{{ option.id }}">{{ option.details[0].name }}</div>
 						</div>
 					</div>
@@ -46,44 +56,125 @@
 		{% endfor %}
 	</div>
 {% endif %}
+{% block style %}
+	<style>
+		.product-option-slider {
+			position: relative;
+			width: 100%;
+			margin-bottom: 50px; /* زيادة المسافة لتجنب تداخل العناصر */
+		}
+
+		.slider-container {
+			position: relative;
+			width: 100%;
+		}
+
+		.slider-label {
+			display: block;
+			margin-bottom: 10px;
+			font-size: 1.2em;
+		}
+
+		/* إزالة الدائرة الافتراضية للسلايدر */
+		input[type="range"] {
+			-webkit-appearance: none;
+			appearance: none;
+			width: 100%;
+			height: 1px; /* تعديل الارتفاع ليكون ملحوظًا أكثر */
+			background: #a5804a;
+			outline: none;
+			opacity: 1;
+			transition: opacity 0.2s;
+		}
+
+		/* تخصيص السلايدر للتوافق مع جميع المتصفحات */
+		input[type="range"]::-webkit-slider-thumb {
+			-webkit-appearance: none;
+			appearance: none;
+			width: 0;
+			height: 0;
+			background: transparent;
+			cursor: pointer;
+		}
+
+		input[type="range"]::-moz-range-thumb {
+			width: 0;
+			height: 0;
+			background: transparent;
+			cursor: pointer;
+		}
+
+		/* استايل لأيقونة Font Awesome كعنصر السلايدر */
+		.slider-thumb-icon {
+			position: absolute;
+			top: 50%;
+			left: 0;
+			transform: translate(-50%, -50%);
+			pointer-events: none; /* منع التفاعل مع الأيقونة */
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+
+		.slider-thumb-icon i {
+			font-size: 24px;
+			color: #a5804a;
+		}
+
+		/* تمركز القيمة المختارة فوق الأيقونة */
+		.slider-value {
+			position: absolute;
+			top: -30px; /* المسافة بين القيمة والأيقونة */
+			color: #a5804a;
+			font-size: 16px;
+			white-space: nowrap;
+			text-align: center;
+			transform: translateX(-50%);
+		}
+	</style>
+{% endblock %}
 {% block scripts %}
 	 <script>
-						    function updateSliderValue(optionId) {
-						        var slider = document.getElementById('option-' + optionId);
-						        var valueSpan = document.getElementById('slider-value-' + optionId);
-						        var thumbIcon = document.getElementById('thumb-icon-' + optionId);
-						        var selectedIndex = slider.value;
-						        var options = {{ product.options|json_encode|raw }};
-						
-						        for (var i = 0; i < options.length; i++) {
-						            if (options[i].id === optionId) {
-						                var optionDetails = options[i].details;
-						                valueSpan.textContent = optionDetails[selectedIndex].name;
-	
-						                var sliderWidth = slider.clientWidth;
-						                var sliderMax = slider.max;
-						                var positionPercent = (slider.value / sliderMax) * 100;
-	
-						                var iconPosition = (positionPercent / 100) * sliderWidth;
-						
-	
-						                if (document.dir === 'rtl') {
-						                    iconPosition = sliderWidth - iconPosition;
-						                }
-	
-						                thumbIcon.style.left = `${iconPosition}px`;
-						
-						                break;
-						            }
-						        }
-						    }
-					
-						    document.addEventListener("DOMContentLoaded", function() {
-						        var sliders = document.querySelectorAll('input[type="range"]');
-						        sliders.forEach(function(slider) {
-						            var optionId = slider.id.split('-')[1];
-						            updateSliderValue(optionId);
-						        });
-						    });
-						</script>
+			function updateSliderValue(optionId) {
+				var slider = document.getElementById('option-' + optionId);
+				var valueSpan = document.getElementById('slider-value-' + optionId);
+				var thumbIcon = document.getElementById('thumb-icon-' + optionId);
+				var selectedIndex = slider.value;
+				var options = {{ product.options|json_encode|raw }};
+		
+				for (var i = 0; i < options.length; i++) {
+					if (options[i].id === optionId) {
+						var optionDetails = options[i].details;
+						valueSpan.textContent = optionDetails[selectedIndex].name;
+		
+						// احسب موضع الأيقونة بناءً على قيمة السلايدر الحالية
+						var sliderWidth = slider.clientWidth;
+						var sliderMax = slider.max;
+						var positionPercent = (slider.value / sliderMax) * 100;
+		
+						// احسب الموضع الصحيح للأيقونة
+						var iconPosition = (positionPercent / 100) * sliderWidth;
+		
+						// في حالة اللغات من اليمين إلى اليسار (RTL)، قم بتغيير الحساب
+						if (document.dir === 'rtl') {
+							iconPosition = sliderWidth - iconPosition;
+						}
+		
+						// ضبط موضع الأيقونة والقيمة
+						thumbIcon.style.left = `${iconPosition}px`;
+		
+						break;
+					}
+				}
+			}
+		
+			// للتأكد من ظهور الأيقونة في الموضع الصحيح عند تحميل الصفحة
+			document.addEventListener("DOMContentLoaded", function() {
+				var sliders = document.querySelectorAll('input[type="range"]');
+				sliders.forEach(function(slider) {
+					var optionId = slider.id.split('-')[1];
+					updateSliderValue(optionId);
+				});
+			});
+		</script>
 {% endblock %}
