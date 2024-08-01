@@ -987,13 +987,6 @@
             "icon": "sicon-caret-down-circle",
             "path": "home.brows_by_cat",
             "fields": []
-        },
-        {
-            "key": "00baf38e-f10e-4365-be09-5660e9d28ae7",
-            "title": "سلايدر منتجات ثابتة (محسن)",
-            "icon": "sicon-packed-box",
-            "path": "home.enhanced_fixed_product_slicer",
-            "fields": []
         }
     ],
     "support_url": "https://salla.com/",
