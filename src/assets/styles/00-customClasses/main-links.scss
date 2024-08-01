@@ -66,12 +66,7 @@
     line-height: 40px; /* Vertically center icon */
 }
 
-/* Styling for the link titles */
-h2 {
-    font-size: 14px;
-    color: #333;
-    margin: 0;
-}
+
 
 /* Responsive design adjustments */
 @media (max-width: 768px) {
@@ -87,9 +82,5 @@ h2 {
     .link-image-container i {
         font-size: 18px;
         line-height: 30px;
-    }
-
-    h2 {
-        font-size: 12px;
     }
 }

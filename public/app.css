@@ -526,6 +526,7 @@ select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/
 .mb-2{margin-bottom:0.5rem}
 .mb-2\.5{margin-bottom:0.625rem}
 .mb-20{margin-bottom:5rem}
+.mb-28{margin-bottom:7rem}
 .mb-3{margin-bottom:0.75rem}
 .mb-3\.5{margin-bottom:0.875rem}
 .mb-4{margin-bottom:1rem}
@@ -546,7 +547,6 @@ select{background-image:url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/
 .mt-5{margin-top:1.25rem}
 .mt-6{margin-top:1.5rem}
 .mt-8{margin-top:2rem}
-.mb-28{margin-bottom:7rem}
 .line-clamp-1{overflow:hidden;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:1}
 .line-clamp-2{overflow:hidden;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2}
 .block{display:block}
@@ -6177,12 +6177,6 @@ salla-slider .swiper-pagination-bullets.swiper-pagination-horizontal {
   font-size: 24px; /* Adjust icon size */
   line-height: 40px; /* Vertically center icon */
 }
-/* Styling for the link titles */
-h2 {
-  font-size: 14px;
-  color: #333;
-  margin: 0;
-}
 /* Responsive design adjustments */
 @media (max-width: 768px) {
   .swiper-slide {
@@ -6195,9 +6189,6 @@ h2 {
   .link-image-container i {
     font-size: 18px;
     line-height: 30px;
-  }
-  h2 {
-    font-size: 12px;
   }
 }
 .before\:text-orange-300::before{content:var(--tw-content);--tw-text-opacity:1;color:rgba(253, 186, 116, 1);color:rgba(253, 186, 116, var(--tw-text-opacity))}
@@ -6233,7 +6224,6 @@ h2 {
 .sm\:mb-8{margin-bottom:2rem}
 .sm\:mt-0{margin-top:0px}
 .sm\:mt-8{margin-top:2rem}
-.sm\:mb-28{margin-bottom:7rem}
 .sm\:block{display:block}
 .sm\:inline-flex{display:inline-flex}
 .sm\:grid{display:grid}
@@ -6255,7 +6245,6 @@ h2 {
 .sm\:pb-20{padding-bottom:5rem}
 .sm\:pt-12{padding-top:3rem}
 .sm\:pt-20{padding-top:5rem}
-.sm\:text-center{text-align:center}
 .sm\:text-start{text-align:left}}
 @media (min-width: 768px){
 .md\:sticky{position:sticky}
@@ -6318,7 +6307,6 @@ h2 {
 .lg\:mb-8{margin-bottom:2rem}
 .lg\:me-10{margin-right:2.5rem}
 .lg\:mt-12{margin-top:3rem}
-.lg\:mb-28{margin-bottom:7rem}
 .lg\:\!block{display:block !important}
 .lg\:block{display:block}
 .lg\:\!inline-block{display:inline-block !important}
@@ -6351,7 +6339,6 @@ h2 {
 .lg\:pt-10{padding-top:2.5rem}
 .lg\:pt-8{padding-top:2rem}
 .lg\:text-left{text-align:left}
-.lg\:text-justify{text-align:justify}
 .lg\:text-8xl{font-size:6rem;line-height:1}
 .lg\:text-base{font-size:1rem;line-height:1.5rem}
 .lg\:text-lg{font-size:1.125rem;line-height:1.75rem}
